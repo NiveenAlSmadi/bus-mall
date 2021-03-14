@@ -1,4 +1,4 @@
-// not finished yet' need resulte'//
+// not finished yet' need resulte'/
 
 'use strict';
 
