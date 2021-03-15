@@ -1,4 +1,4 @@
-// not finished yet' need resulte'/
+
 
 'use strict';
 
@@ -89,16 +89,15 @@ button.addEventListener('click', viewResults);
 render();
 
 function viewResults() {
-  let ulElement = document.createElement('ul');
-  list.appendChild(ulElement);
+  let Element = document.createElement('ul');
+  list.appendChild(Element);
   let liElement;
   for (let i = 0; i < Item.all.length; i++) {
     liElement = document.createElement('li');
     liElement.textContent = `${Item.all[i].name} had ${Item.all[i].clicks} votes, and was seen ${Item.all[i].views} times.`;
-    ulElement.appendChild(liElement);
+    Element.appendChild(liElement);
   }
 }
-
 
 
 
