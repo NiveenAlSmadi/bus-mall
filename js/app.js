@@ -12,6 +12,8 @@ const imageSection=document.getElementById('imagesSection');
 const leftImage=document.getElementById('leftImage');
 const midImage=document.getElementById('midImage');
 const rightImage=document.getElementById('rightImage');
+let list = document.getElementById('list');
+let button = document.getElementById('button');
 let totalClicks = 0;
 
 
@@ -36,29 +38,6 @@ for (let i = 0; i < items.length; i++) {
 console.table(Item.all);
 //////////////////////////////////////////render//////////////////////////////
 
-imageSection.addEventListener('click',clickHandler);
-function clickHandler(event){
-  if(totalClicks < 25) {
-    if(event.target.id === 'leftImage') {
-      left.clicks++;
-      if(event.target.id === 'midImage') {
-        mid.clicks++;
-      }else if(event.target.id === 'rightImage') {
-        right.clicks++; }
-    }
-    if(event.target.id !== 'imagesSection') {
-      totalClicks++;
-    }
-    render();
-    if (totalClicks ===25){
-      //viewResults();
-      totalClicks++;
-    }
-
-  }
-
-}
-
 let left, mid, right;
 function render() {
   left = Item.all[random(0,Item.all.length-1)];
@@ -82,16 +61,47 @@ function render() {
 
 }
 
+imageSection.addEventListener('click',clickHandler);
+function clickHandler(event){
+  if(totalClicks < 25) {
+    if(event.target.id === 'leftImage') {
+      left.clicks++;
+      if(event.target.id === 'midImage') {
+        mid.clicks++;
+      }else if(event.target.id === 'rightImage') {
+        right.clicks++; }
+    }
+    if(event.target.id !== 'imagesSection') {
+      totalClicks++;
+    }
+    render();
+    if (totalClicks ===25){
+      viewResults();
+      totalClicks++;
+    }
 
+  }
 
+}
 
+imageSection.addEventListener('click',clickHandler);
+button.addEventListener('click', viewResults);
 render();
+
+function viewResults() {
+  let ulElement = document.createElement('ul');
+  list.appendChild(ulElement);
+  let liElement;
+  for (let i = 0; i < Item.all.length; i++) {
+    liElement = document.createElement('li');
+    liElement.textContent = `${Item.all[i].name} had ${Item.all[i].clicks} votes, and was seen ${Item.all[i].views} times.`;
+    ulElement.appendChild(liElement);
+  }
+}
+
+
+
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
-// resulte/////
-
-//let button = document.getElementById('button')
