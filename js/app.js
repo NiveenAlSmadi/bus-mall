@@ -76,7 +76,7 @@ function clickHandler(event){
     }
     render();
     if (totalClicks ===25){
-      viewResults();
+      imageSection.removeEventListener('click',clickHandler);
       totalClicks++;
     }
 
