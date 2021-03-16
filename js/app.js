@@ -17,6 +17,14 @@ let button = document.getElementById('button');
 let totalClicks = 0;
 
 
+
+
+// local storage
+function setItem(){
+  localStorage.setItem( 'list',JSON.stringify(Item.all));
+
+}
+
 function Item(name){
   this.name = name;
   if (name === 'usb'){///////////////////3 diffrent path//////////////////////
@@ -35,7 +43,8 @@ Item.all = [];
 for (let i = 0; i < items.length; i++) {
   new Item(items[i]);
 }
-console.table(Item.all);
+//console.table(Item.all);
+getItem();
 
 
 //////////////////////////////////////////render////////////////////////////////////////////
@@ -60,6 +69,9 @@ function render() {
   rightImage.title=right.name;
   rightImage.alt=right.name;
   right.views++;
+  setItem();
+  //localStorageData();
+
 
   while((left.name === right.name)|| (left.name ===mid.name)|| (mid.name === right.name)|| (No_repetition.includes(left.name))||
   (No_repetition.includes(right.name))|| (No_repetition.includes(mid.name)))
@@ -172,4 +184,12 @@ function chart() {
 }
 
 
+function getItem(){
+
+  let List2 =localStorage.getItem('list');
+  if(List2){
+    Item.all =JSON.parse( List2);
+  }
+}
+console.log(localStorage);
 
