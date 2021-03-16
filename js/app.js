@@ -50,8 +50,8 @@ function render() {
 
   mid= Item.all[random(0,Item.all.length-1)];
   midImage.src = mid.Path;
-  midImage.title=left.name;
-  midImage.alt=left.name;
+  midImage.title=mid.name;
+  midImage.alt=mid.name;
   mid.views++;
 
 
@@ -66,14 +66,19 @@ function render() {
   {
 
     left = Item.all[random(0,Item.all.length-1)];
-    leftImage.setAttribute('src' , left.Path);
+    //leftImage.setAttribute('src' , left.Path);
+    leftImage.src = left.Path;
     leftImage.setAttribute('alt' , left.name);
 
     mid= Item.all[random(0,Item.all.length-1)];
-    midImage.setAttribute('src' , mid.path);
+    //midImage.setAttribute('src' , mid.path);
+    midImage.src = mid.Path;
     midImage.setAttribute('alt' ,mid.name);
+
+
     right = Item.all[random(0,Item.all.length-1)];
-    rightImage.setAttribute('src' , right.path);
+    //rightImage.setAttribute('src' , right.path);
+    rightImage.src = right.Path;
     rightImage.setAttribute('alt' ,right.name);
 
   }
