@@ -120,7 +120,6 @@ function clickHandler(event){
   }
 
 }
-
 imageSection.addEventListener('click',clickHandler);
 render();
 
