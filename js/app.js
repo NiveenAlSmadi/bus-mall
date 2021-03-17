@@ -17,8 +17,6 @@ let button = document.getElementById('button');
 let totalClicks = 0;
 
 
-
-
 // local storage
 function setItem(){
   localStorage.setItem( 'list',JSON.stringify(Item.all));
@@ -70,7 +68,7 @@ function render() {
   rightImage.alt=right.name;
   right.views++;
   setItem();
-  //localStorageData();
+
 
 
   while((left.name === right.name)|| (left.name ===mid.name)|| (mid.name === right.name)|| (No_repetition.includes(left.name))||
@@ -112,26 +110,30 @@ function clickHandler(event){
     render();
     if (totalClicks ===25){
       imageSection.removeEventListener('click',clickHandler);
-      button.addEventListener('click', viewResults);
-      totalClicks++;
-      chart();
+
+
     }
 
   }
 
 }
+button.addEventListener('click', viewResults);
+
 imageSection.addEventListener('click',clickHandler);
 render();
+let Element1 = document.createElement('ul');
 
 function viewResults() {
-  let Element = document.createElement('ul');
-  list.appendChild(Element);
+  Element1.innertext='';
+
   let liElement;
   for (let i = 0; i < Item.all.length; i++) {
     liElement = document.createElement('li');
     liElement.textContent = `${Item.all[i].name} had ${Item.all[i].clicks} votes, and was seen ${Item.all[i].views} times.`;
-    Element.appendChild(liElement);
+    Element1.appendChild(liElement);
   }
+  list.appendChild(Element1);
+  chart();
 }
 
 
@@ -139,8 +141,6 @@ function viewResults() {
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
 
 ///////////////////chart/////////////////////////////////
 function chart() {
