@@ -110,6 +110,7 @@ function clickHandler(event){
     render();
     if (totalClicks ===25){
       imageSection.removeEventListener('click',clickHandler);
+      alert('press view resulte ');
 
 
     }
