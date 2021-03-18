@@ -1,7 +1,15 @@
-# bus-mall
-- when i solving the lab I learned the array method .include().  its help me in (no_repetition ) case ., also used The setAttribute() which is  method adds the specified attribute to an element .
 
+## BusMall
+This project is about having a user vote and display the results.
 
-###### The CHART appears at the bottom of the list
+#### Author: NiveenALSmadi
+
+#### Links and Resources
+Repo [link] (https://github.com/NiveenAlSmadi/bus-mall.git)
+Deployed [page](https://niveenalsmadi.github.io/bus-mall/)
+
+#### Reflections and Comments
+added some style , and fixed some buges 
+
 
 
