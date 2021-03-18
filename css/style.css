@@ -7,14 +7,27 @@
 body{background-color: rgb(97, 73, 73);
 
 }
-h1 {
-    font-size: 50px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    text-align: center;
- color:  rgb(242, 224, 63);
-}
+header {
+    background: rgb(242, 224, 63);
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    padding: 0.5em 5em;
+    margin-bottom: 25px;}
 
+h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+ color:  black;
+ border: 5px;
+}
+#logo {
+    height: 75px;
+    width: 75px;
+    padding: 20px 10px;
+    margin: 10px 20px 0px 20px;
+}
 #imagesSection {
     display: flex;
     justify-content: space-around;
@@ -37,7 +50,7 @@ button {
     padding: 15px 32px;
     text-align: center;
     border-radius: 50%;
-    display: inline-block;
+   
     font-size: 20px;
     font-family: Roboto ;
     font-weight: bold;

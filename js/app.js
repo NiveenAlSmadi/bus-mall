@@ -122,11 +122,10 @@ button.addEventListener('click', viewResults);
 
 imageSection.addEventListener('click',clickHandler);
 render();
-let Element1 = document.createElement('ul');
 
+let Element1 = document.createElement('ul');
 function viewResults() {
   Element1.innertext='';
-
   let liElement;
   for (let i = 0; i < Item.all.length; i++) {
     liElement = document.createElement('li');
