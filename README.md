@@ -1,6 +1,6 @@
 
 ## BusMall
-This project is about having a user vote and display the results.
+This project is about selection items , the user have only 25 clike to cliked , then its will show to him/her how much he /she votes in the items 
 
 #### Author: NiveenALSmadi
 
